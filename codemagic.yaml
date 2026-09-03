@@ -4,11 +4,15 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Create fresh Android structure
-        script: flutter create . --platforms=android
+      - name: Clean and create Android structure
+        script: |
+          rm -rf android
+          flutter create . --platforms=android
       - name: Get dependencies
         script: flutter pub get
       - name: Build APK
         script: flutter build apk --release
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
+
+  
