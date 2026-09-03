@@ -4,8 +4,8 @@ workflows:
     environment:
       flutter: stable
     scripts:
-      - name: Create Android structure
-        script: flutter create . --platforms=android --org com.territorio.vitoria
+      - name: Create Android scaffolding
+        script: flutter create . --platforms=android
       - name: Get dependencies
         script: flutter pub get
       - name: Build APK
@@ -13,3 +13,4 @@ workflows:
     artifacts:
       - build/app/outputs/flutter-apk/app-release.apk
 
+  
