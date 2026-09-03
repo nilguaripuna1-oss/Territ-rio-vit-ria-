@@ -4,6 +4,8 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Create Android structure if missing
+        script: flutter create . --platforms=android --org com.territorio.vitoria
       - name: Get dependencies
         script: flutter packages get
       - name: Build APK
